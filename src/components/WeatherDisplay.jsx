@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Sun, Cloud, CloudRain, CloudSun } from "lucide-react";
 import { useWeatherContext } from "../context/WeatherProvider";
 import styles from "../styles/Weather.module.css";
-import { SearchBar } from "./SearchBar";
 
 const getWeatherIcon = (type) => {
   const normalizedType = String(type || "").toLowerCase();

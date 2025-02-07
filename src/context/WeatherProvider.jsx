@@ -5,7 +5,7 @@ const WeatherContext = createContext(undefined);
 
 export const WeatherProvider = ({ children }) => {
   const [city, setCity] = useState(
-    () => localStorage.getItem("lastCity") || "London"
+    () => localStorage.getItem("lastCity") || "Bangalore"
   );
   const [unit, setUnit] = useState("celsius");
 
