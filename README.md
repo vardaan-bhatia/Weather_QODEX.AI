@@ -18,7 +18,6 @@ A simple weather application that fetches weather data using SWR and displays it
 - Wind speed details.
 - Error handling for failed API requests.
 - Supports temperature unit conversion.
-- Responsive and styled with CSS modules.
 
 ## Approach
 
@@ -28,7 +27,6 @@ A simple weather application that fetches weather data using SWR and displays it
 - **Structured the project with reusable components** for maintainability.
 - **Leveraged CSS Modules** for scoped and modular styling.
 - **Used Lucide React** for clean and consistent UI icons.
-- **Ensured a fully responsive design** for different screen sizes.
 
 ## Usage
 
