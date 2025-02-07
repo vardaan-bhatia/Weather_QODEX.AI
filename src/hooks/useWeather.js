@@ -35,7 +35,7 @@ export const useWeather = (city) => {
     {
       refreshInterval: 30 * 60 * 1000,
       revalidateOnFocus: true,
-      shouldRetryOnError: false, // Prevent infinite retries on invalid city names
+      shouldRetryOnError: false,
     }
   );
 
@@ -56,7 +56,6 @@ export const useWeather = (city) => {
     return () => clearInterval(timer);
   }, [data]);
 
-  // Handle API errors (e.g., invalid city name)
   if (error) {
     console.error("Weather API Error:", error.message);
     return {
@@ -70,7 +69,6 @@ export const useWeather = (city) => {
   if (!data)
     return { weatherData: null, currentTime: null, error: null, isLoading };
 
-  // Ensure required data exists before accessing it
   if (!data.location || !data.current || !data.forecast) {
     return {
       weatherData: null,

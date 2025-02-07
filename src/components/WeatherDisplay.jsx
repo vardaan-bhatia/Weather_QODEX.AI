@@ -83,7 +83,8 @@ export const WeatherDisplay = () => {
         </div>
         <div className={styles.weatherIcon}>
           {getWeatherIcon(weatherData.current.condition)}
-        </div>
+        </div>{" "}
+        <h3 className={styles.windSpeed}> {weatherData.current.windSpeed}</h3>
       </div>
       <button
         className={styles.toggleButton}
