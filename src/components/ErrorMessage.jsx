@@ -1,6 +1,6 @@
-import React from "react";
 import { AlertCircle } from "lucide-react";
 import { useWeatherContext } from "./../context/WeatherProvider";
+import styles from "../styles/ErrorMessage.module.css";
 
 export const ErrorMessage = () => {
   const { error } = useWeatherContext();
@@ -8,8 +8,8 @@ export const ErrorMessage = () => {
   if (!error) return null;
 
   return (
-    <div role="alert">
-      <div>
+    <div className={styles.errorContainer} role="alert">
+      <div className={styles.errorContent}>
         <AlertCircle size={20} />
         <span>
           {error.message || "Something went wrong. Please try again."}

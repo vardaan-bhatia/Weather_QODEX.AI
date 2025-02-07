@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
 import { useWeatherContext } from "../context/WeatherProvider";
-import styles from "./SearchBar.module.css";
+import styles from "../styles/SearchBar.module.css";
 
 export const SearchBar = () => {
   const { setCity } = useWeatherContext();
