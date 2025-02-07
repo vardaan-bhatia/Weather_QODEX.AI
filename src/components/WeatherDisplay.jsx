@@ -2,20 +2,21 @@ import { useState } from "react";
 import { Sun, Cloud, CloudRain, CloudSun } from "lucide-react";
 import { useWeatherContext } from "../context/WeatherProvider";
 import styles from "../styles/Weather.module.css";
+import { SearchBar } from "./SearchBar";
 
 const getWeatherIcon = (type) => {
   const normalizedType = String(type || "").toLowerCase();
   switch (normalizedType) {
     case "sunny":
-      return <Sun size={48} />;
+      return <Sun size={68} color="#dcdcdc" />;
     case "rainy":
-      return <CloudRain size={48} />;
+      return <CloudRain size={68} color="#dcdcdc" />;
     case "cloudy":
-      return <Cloud size={48} />;
+      return <Cloud size={68} color="#dcdcdc" />;
     case "partly cloudy":
-      return <CloudSun size={48} />;
+      return <CloudSun size={68} color="#dcdcdc" />;
     default:
-      return <CloudSun size={48} />;
+      return <CloudSun size={68} color="#dcdcdc" />;
   }
 };
 
@@ -66,15 +67,6 @@ export const WeatherDisplay = () => {
     <div className={styles.container}>
       <div className={styles.topSection}>
         <h3 className={styles.greeting}>{getGreetingMessage()}</h3>
-        <div className={styles.temperatureSection}>
-          <div className={styles.temperature}>
-            {convertTemp(weatherData.current.temperature)}°
-            {unit === "celsius" ? "C" : "F"}
-          </div>
-          <div className={styles.weatherIcon}>
-            {getWeatherIcon(weatherData.current.condition)}
-          </div>
-        </div>
         <div className={styles.cityDetails}>
           <h2>
             {weatherData.location.name}, {weatherData.location.country}
@@ -84,6 +76,15 @@ export const WeatherDisplay = () => {
           </p>
         </div>
       </div>
+      <div className={styles.temperatureSection}>
+        <div className={styles.temperature}>
+          {convertTemp(weatherData.current.temperature)}°
+          {unit === "celsius" ? "C" : "F"}
+        </div>
+        <div className={styles.weatherIcon}>
+          {getWeatherIcon(weatherData.current.condition)}
+        </div>
+      </div>
       <button
         className={styles.toggleButton}
         onClick={() => setUnit(unit === "celsius" ? "fahrenheit" : "celsius")}
@@ -91,6 +92,11 @@ export const WeatherDisplay = () => {
         Switch to {unit === "celsius" ? "Fahrenheit" : "Celsius"}
       </button>
       <div className={styles.forecastSection}>
+        <div>
+          <h1 className={styles.forecastHeading}>
+            Weather Forecast <br /> {weatherData.location.name} <br />
+          </h1>
+        </div>
         {weatherData.forecast.map((day, index) => (
           <div key={index} className={styles.forecastDay}>
             <p>{day.day}</p>

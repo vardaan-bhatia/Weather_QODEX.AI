@@ -1,28 +1,29 @@
-/* Weather.module.css */
+/* General Styles */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 60px;
-  background: #1e1e2e;
-  height: 80%;
-  color: white;
-  border-radius: 10px;
+  padding: 50px;
 }
 
+/* Top Section */
 .topSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .greeting {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 40px;
+  font-weight: bolder;
+  color: white;
 }
 
+/* Temperature Section */
 .temperatureSection {
   display: flex;
   flex-direction: column;
@@ -30,89 +31,76 @@
 }
 
 .temperature {
-  font-size: 48px;
+  font-size: 72px;
   font-weight: bold;
+  color: white;
 }
 
 .weatherIcon {
   margin-top: 10px;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
+/* City Details */
 .cityDetails {
   text-align: right;
+  font-size: 16px;
+  color: #dcdcdc;
 }
 
+/* Toggle Button */
 .toggleButton {
-  margin-top: 10px;
-  padding: 8px 16px;
-  background: #ff8c00;
+  margin-top: 15px;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #104db0;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
 }
 
 .toggleButton:hover {
-  background: #e67e00;
-  transition: background-color 0.2s ease;
+  background-color: #0a5de2;
+  transform: scale(1.05);
 }
 
+/* Forecast Section */
 .forecastSection {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin-top: 20px;
   width: 100%;
+  gap: 10px;
 }
-
 .forecastDay {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background 0.2s ease;
+  position: relative;
+}
+
+.forecastDay::before {
+  content: "";
+  position: absolute;
+  height: 90%;
+  width: 1px;
+  background: #dcdcdc;
+  left: 0;
+  transform: translateX(-50%);
 }
 
 .forecastDay p {
-  margin: 5px 0;
+  margin: 6px 0;
+  font-weight: bold;
+  color: #ffffff;
 }
-
-/* Additional styles for responsiveness */
-@media (max-width: 768px) {
-  .container {
-    padding: 30px;
-  }
-
-  .topSection {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .cityDetails {
-    text-align: center;
-  }
-
-  .forecastSection {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  .forecastDay {
-    flex: 1 1 calc(33.333% - 15px);
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 20px;
-  }
-
-  .temperature {
-    font-size: 36px;
-  }
-
-  .greeting {
-    font-size: 20px;
-  }
-
-  .forecastDay {
-    flex: 1 1 calc(50% - 15px);
-  }
+.forecastHeading {
+  color: #dcdcdc;
 }

@@ -1,5 +1,8 @@
 .container {
-  background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+  background: #373b44;
+  background: -webkit-linear-gradient(to right, #4286f4, #373b44);
+  background: linear-gradient(to right, #4286f4, #373b44);
+
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -8,5 +11,5 @@
 
 .content {
   width: 70vw;
-  height: 80vh;
+  height: 90vh;
 }
