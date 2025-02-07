@@ -1,0 +1,51 @@
+.container {
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cityInfo h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.cityInfo p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.dateTime p {
+  margin: 0;
+}
+
+.currentWeather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.temperature {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.forecast {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forecastDay {
+  text-align: center;
+}
+
+.forecastDay p {
+  margin: 0.5rem 0;
+}
