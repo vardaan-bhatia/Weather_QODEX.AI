@@ -4,7 +4,7 @@ A simple weather application that fetches weather data using SWR and displays it
 
 ## Live Demo
 
-[View Live](#) {/_ Replace with actual link _/}
+[Weather App](https://weather-qodexai.vercel.app/)
 
 ## Screenshot
 
@@ -29,3 +29,37 @@ A simple weather application that fetches weather data using SWR and displays it
 - **Leveraged CSS Modules** for scoped and modular styling.
 - **Used Lucide React** for clean and consistent UI icons.
 - **Ensured a fully responsive design** for different screen sizes.
+
+## Usage
+
+1. Enter a city name in the search bar.
+2. View the current weather details.
+3. Check the **7-day forecast** and **wind speed**.
+4. Switch between **Celsius and Fahrenheit**.
+5. Handle API errors gracefully.
+
+## Code Structure
+
+```plaintext
+src/
+│── components/
+│   ├── ErrorMessage.jsx
+│   ├── SearchBar.jsx
+│   ├── WeatherDisplay.jsx
+│
+│── context/
+│   ├── WeatherProvider.jsx
+│
+│── hooks/
+│   ├── useWeather.js
+│
+│── styles/
+│   ├── ErrorMessage.module.css
+│   ├── SearchBar.module.css
+│   ├── Weather.module.css
+│   ├── app.module.css
+│
+│── App.jsx
+│── main.js
+│── index.css
+```
